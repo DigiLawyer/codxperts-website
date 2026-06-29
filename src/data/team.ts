@@ -34,10 +34,9 @@ export const teamSections: TeamSection[] = [
     title: 'Technical Team',
     members: [
       {
-        name: 'Safeeullah Samir',
+        name: 'Muhammad Safee Ullah',
         linkedin: 'https://www.linkedin.com/in/safeeullah-samir/',
         photo: team.safeeullahSamir,
-        website: 'https://safeeullah.com',
       },
       {
         name: 'Hammad Ejaz',
