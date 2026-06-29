@@ -1,21 +1,21 @@
 {
-  "name": "Codxperts",
-  "short_name": "Codxperts",
-  "description": "Software and AI engineering for institutions that can't afford for it to break.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#15171C",
-  "theme_color": "#15171C",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "type": "image/png",
       "sizes": "192x192",
-      "type": "image/png"
+      "src": "https://oboxks3wp0.ufs.sh/f/iW0yAF6rEygJmqeLQSr1KTYcuo5kgqXspF8C29JeV7b3IfwB"
     },
     {
-      "src": "/icon-512.png",
+      "type": "image/png",
       "sizes": "512x512",
-      "type": "image/png"
+      "src": "https://oboxks3wp0.ufs.sh/f/iW0yAF6rEygJkG3LBZhM4rxnzsQZKqLfO0htBvuEW7aAkVyY"
     }
-  ]
+  ],
+  "description": "Software and AI engineering for institutions that can't afford for it to break.",
+  "background_color": "#15171C",
+  "theme_color": "#15171C",
+  "name": "Codxperts",
+  "start_url": "/",
+  "display": "standalone",
+  "short_name": "Codxperts"
 }

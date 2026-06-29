@@ -2,11 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { team } from '../data/team';
+import { teamSections } from '../data/team';
 ---
 
 <Layout
-  title="Team — Codxperts"
+  title="Team - Codxperts"
   description="The Codxperts engineering team behind DigiLawyer and client work across legal, travel, healthcare, and commerce."
 >
   <SiteHeader />
@@ -19,25 +19,33 @@ import { team } from '../data/team';
       </div>
     </section>
 
-    <section class="section-anchor">
+    <section class="section-anchor team-sections">
       <div class="wrap">
-        <div class="team-grid reveal">
-          {team.map((member) => (
-            <article class="team-card">
-              <span class="team-badge" aria-hidden="true">{member.initials}</span>
-              <h2 class="team-name">{member.name}</h2>
-              <div class="team-links">
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                {member.website && (
-                  <>
-                    <span class="team-sep" aria-hidden="true">/</span>
-                    <a href={member.website} target="_blank" rel="noopener noreferrer">Website</a>
-                  </>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
+        {teamSections.map((section) => (
+          <div class="team-section reveal">
+            <div class="team-section-head">
+              <p class="eyebrow">{section.title}</p>
+            </div>
+            <div class:list={["team-grid", { "team-grid-compact": section.members.length < 3 }]}>
+              {section.members.map((member) => (
+                <article class="team-card">
+                  <img class="team-photo" src={member.photo} alt={`${member.name} LinkedIn profile photo`} loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+
+                  <h2 class="team-name">{member.name}</h2>
+                  <div class="team-links">
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    {member.website && (
+                      <>
+                        <span class="team-sep" aria-hidden="true">/</span>
+                        <a href={member.website} target="_blank" rel="noopener noreferrer">Website</a>
+                      </>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
 

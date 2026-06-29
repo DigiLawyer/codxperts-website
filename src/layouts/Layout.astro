@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { uploadedAssets } from '../data/uploaded-assets';
 
 interface Props {
   title?: string;
@@ -10,7 +11,7 @@ interface Props {
 const {
   title = 'Codxperts — Software & AI engineering',
   description = "Codxperts builds software and AI products trusted by courts, government offices, regulators, and law firms. The team behind DigiLawyer. Building globally.",
-  image = '/og-image.png',
+  image = uploadedAssets.site.ogImagePng,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -26,11 +27,11 @@ const imageURL = new URL(image, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" href={uploadedAssets.site.faviconIco} sizes="any" />
+    <link rel="icon" type="image/svg+xml" href={uploadedAssets.site.faviconSvg} />
+    <link rel="icon" type="image/png" sizes="32x32" href={uploadedAssets.site.favicon32} />
+    <link rel="icon" type="image/png" sizes="16x16" href={uploadedAssets.site.favicon16} />
+    <link rel="apple-touch-icon" sizes="180x180" href={uploadedAssets.site.appleTouchIcon} />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#15171C" />
 

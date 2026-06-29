@@ -1,4 +1,6 @@
 ---
+import { uploadedAssets } from '../data/uploaded-assets';
+
 interface Props {
   class?: string;
   width?: number;
@@ -10,7 +12,7 @@ const { class: className, width = 40, height = 40 } = Astro.props;
 
 <span class:list={['logo-wrap', className]} style={`width:${width}px;height:${height}px`}>
   <img
-    src="/logo.svg"
+    src={uploadedAssets.site.logo}
     alt=""
     class="logo-mark"
     width={width}
