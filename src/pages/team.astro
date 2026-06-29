@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { team } from '../data/team';
+---
+
+<Layout
+  title="Team — Codxperts"
+  description="The Codxperts engineering team behind DigiLawyer and client work across legal, travel, healthcare, and commerce."
+>
+  <SiteHeader />
+  <main id="main" class="subpage">
+    <section class="sub-hero">
+      <div class="wrap">
+        <p class="eyebrow reveal">Team</p>
+        <h1 class="reveal">The people who build it.</h1>
+        <p class="sub-lede reveal">Product engineers based in Lahore, shipping software for institutions and clients worldwide.</p>
+      </div>
+    </section>
+
+    <section class="section-anchor">
+      <div class="wrap">
+        <div class="team-grid reveal">
+          {team.map((member) => (
+            <article class="team-card">
+              <span class="team-badge" aria-hidden="true">{member.initials}</span>
+              <h2 class="team-name">{member.name}</h2>
+              <div class="team-links">
+                <a href={member.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                {member.website && (
+                  <>
+                    <span class="team-sep" aria-hidden="true">/</span>
+                    <a href={member.website} target="_blank" rel="noopener noreferrer">Website</a>
+                  </>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section-anchor">
+      <div class="wrap">
+        <div class="group-bar reveal">
+          <span class="gtag">Also see</span>
+          <div>
+            <span class="gname">Track record</span>
+            <p class="gdesc">Products we've shipped and companies where our engineers have built.</p>
+          </div>
+          <a class="btn btn-ghost" href="/track-record">View track record <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</Layout>

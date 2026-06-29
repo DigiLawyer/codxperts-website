@@ -1,0 +1,17 @@
+---
+const path = Astro.url.pathname;
+const onHome = path === '/' || path === '';
+---
+<footer>
+  <div class="wrap foot">
+    <div class="l"><b>Codxperts Solutions (Pvt.) Ltd.</b><br>Software &amp; AI engineering &middot; Lahore, Pakistan</div>
+    <div class="r">
+      {onHome ? (
+        <a href="#main" class="back-top">Back to top</a>
+      ) : (
+        <a href="/" class="back-top">Home</a>
+      )}
+      {' '}&middot; &copy; 2026
+    </div>
+  </div>
+</footer>

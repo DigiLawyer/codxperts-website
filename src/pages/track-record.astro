@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { employers, shippedProducts } from '../data/track-record';
+---
+
+<Layout
+  title="Track record — Codxperts"
+  description="Products shipped by Codxperts and the companies where our engineers have built before joining the firm."
+>
+  <SiteHeader />
+  <main id="main" class="subpage">
+    <section class="sub-hero">
+      <div class="wrap">
+        <p class="eyebrow reveal">Track record</p>
+        <h1 class="reveal">Built, shipped, and battle-tested.</h1>
+        <p class="sub-lede reveal">Codxperts products in production today, and the engineering pedigree behind the team that builds them.</p>
+      </div>
+    </section>
+
+    <section class="section-anchor">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div>
+            <p class="eyebrow">Products</p>
+            <h2>What we've shipped.</h2>
+          </div>
+        </div>
+        <div class="tr-product-grid reveal">
+          {shippedProducts.map((product) => (
+            <article class="tr-product">
+              <div class="tr-product-top">
+                <span class="tag">{product.tag}</span>
+                <span class="tr-period">{product.period}</span>
+              </div>
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+              <div class="stack">
+                {product.stack.map((item) => (
+                  <span>{item}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section-anchor tr-employers-section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div>
+            <p class="eyebrow">Engineering pedigree</p>
+            <h2>Our engineers have shipped at</h2>
+          </div>
+        </div>
+        <div class="tr-employer-grid reveal">
+          {employers.map((employer) => (
+            <article class="tr-employer">
+              <span class="tr-sector">{employer.sector}</span>
+              <h3>{employer.name}</h3>
+              <p>{employer.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section-anchor contact-section">
+      <div class="wrap">
+        <div class="contact-grid reveal">
+          <div>
+            <h2>Building something that needs this caliber of engineering?</h2>
+            <p class="sub">Tell us what you're working on.</p>
+          </div>
+          <a href="/#contact" class="btn btn-primary">Start a project <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</Layout>

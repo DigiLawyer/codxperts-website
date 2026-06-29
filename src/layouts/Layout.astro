@@ -58,7 +58,9 @@ const imageURL = new URL(image, Astro.site);
     />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <slot />
     <script is:inline src="/reveal.js"></script>
+    <script is:inline src="/nav.js"></script>
   </body>
 </html>

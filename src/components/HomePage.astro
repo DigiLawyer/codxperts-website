@@ -1,43 +1,53 @@
 ---
-import Logo from './Logo.astro';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+
+const clients = {
+  government: [
+    { badge: 'DR', name: 'Drug Regulatory Authority of Pakistan' },
+    { badge: 'AG', name: 'Advocate General Office Punjab' },
+    { badge: 'AG', name: 'Advocate General Office Sindh' },
+    { badge: 'PP', name: 'Power Planning' },
+  ],
+  judiciary: [
+    { badge: 'SH', name: 'Sindh High Court' },
+    { badge: 'PH', name: 'Peshawar High Court' },
+    { badge: 'PB', name: 'Govt of Punjab' },
+  ],
+  enforcement: [{ badge: 'SP', name: 'Sindh Police' }],
+  firms: [
+    { badge: 'AU', name: 'AUC Law' },
+    { badge: 'AB', name: 'ABS & Co' },
+    { badge: 'ZK', name: 'Zafar Kalanauri & Co' },
+  ],
+};
 ---
-<header>
-  <div class="wrap bar">
-    <a href="#top" class="brand"><Logo width={40} height={40} />CODXPERTS</a>
-    <nav>
-      <a href="#clients" class="navlink">Clients</a>
-      <a href="#partners" class="navlink">Partners</a>
-      <a href="#capabilities" class="navlink">Capabilities</a>
-      <a href="#work" class="navlink">Work</a>
-      <a href="#about" class="navlink">About</a>
-      <a href="#contact" class="cta">Start a project</a>
-    </nav>
-  </div>
-</header>
+<SiteHeader />
 
-<main id="top">
+<main id="main">
 
-  <!-- HERO -->
-  <section class="hero">
+  <section class="hero" aria-labelledby="hero-heading">
     <div class="wrap hero-grid">
-      <div>
-        <p class="eyebrow reveal">Software &amp; AI engineering firm</p>
-        <h1 class="reveal">We build AI software for institutions that can't afford for it to <em>break</em>.</h1>
-        <p class="lede reveal">Codxperts is trusted by <strong>courts, government regulators, and law firms</strong>, and is the team that built DigiLawyer, Pakistan's first AI legal platform. We design, build, and ship applied-AI software for clients worldwide.</p>
+      <div class="hero-copy">
+        <p class="eyebrow reveal">Software &amp; AI engineering</p>
+        <h1 id="hero-heading" class="reveal">We build AI software for institutions that can't afford for it to <em>break</em>.</h1>
+        <p class="lede reveal">Codxperts is trusted by <strong>courts, government regulators, and law firms</strong>. We built DigiLawyer, Pakistan's first AI legal platform, and ship applied-AI software for clients worldwide.</p>
         <div class="hero-actions reveal">
           <a href="#contact" class="btn btn-primary">Start a project <span class="arr" aria-hidden="true">&rarr;</span></a>
           <a href="#work" class="btn btn-ghost">See the work</a>
-          <a href="https://oboxks3wp0.ufs.sh/f/iW0yAF6rEygJXuhjk3vGakUrTPICen4zvidYDEmZAfwS139W" class="btn btn-dl" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download portfolio
-          </a>
         </div>
+        <p class="hero-portfolio reveal">
+          <a href="https://oboxks3wp0.ufs.sh/f/iW0yAF6rEygJXuhjk3vGakUrTPICen4zvidYDEmZAfwS139W" class="portfolio-link" download="codxperts-portfolio.pdf">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download portfolio PDF
+          </a>
+        </p>
       </div>
 
-      <div class="panel reveal" aria-label="Selected clients">
+      <aside class="panel reveal" aria-labelledby="docket-heading">
         <div class="panel-head">
-          <span class="t">Selected clients</span>
-          <span class="live"><span class="d" aria-hidden="true"></span>Active</span>
+          <h2 id="docket-heading" class="t">Institutional deployments</h2>
+          <span class="live"><span class="d" aria-hidden="true"></span>In production</span>
         </div>
         <div class="stagger">
           <div class="prow"><span class="cat">Regulator</span><span class="who">Drug Regulatory Authority (DRAP)</span></div>
@@ -46,134 +56,82 @@ import Logo from './Logo.astro';
           <div class="prow"><span class="cat">Government</span><span class="who">Advocate General offices</span></div>
           <div class="prow"><span class="cat">Law firm</span><span class="who">Zafar Kalanauri &amp; Co</span></div>
         </div>
-        <div class="panel-foot">// institutions running software built by Codxperts</div>
-      </div>
+        <p class="panel-foot">Software in daily use across the public and private sector.</p>
+      </aside>
     </div>
   </section>
 
-  <!-- CLIENTS -->
-  <section id="clients">
+  <section id="clients" class="section-anchor">
     <div class="wrap">
       <div class="sec-head reveal">
         <div>
           <p class="eyebrow">Clients</p>
           <h2>Trusted across the public and private sector.</h2>
         </div>
-        <span class="num">/ 01</span>
       </div>
 
       <div class="client-block reveal">
-        <!-- GOVERNMENT & REGULATORS -->
         <div class="cgroup">
-          <div class="label"><div class="k">Government &amp; Regulators</div><div class="n">// public sector</div></div>
+          <div class="label"><div class="k">Government &amp; regulators</div></div>
           <div class="names">
-            <div class="nm">
-              <span class="logo-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="#2E7D32" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-              </span>
-              Drug Regulatory Authority of Pakistan
-            </div>
-            <div class="nm">
-              <span class="logo-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="#1565C0" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 9l4 2.18V17h2v-4.5l1 .54V17c0 2.21 3.58 4 8 4s8-1.79 8-4v-4.82L23 9 12 3zm6 13.5c0 .83-2.69 2.5-6 2.5s-6-1.67-6-2.5v-3.36l6 3.27 6-3.27v3.36z"/></svg>
-              </span>
-              Advocate General Office Punjab
-            </div>
-            <div class="nm">
-              <span class="logo-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="#1565C0" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 9l4 2.18V17h2v-4.5l1 .54V17c0 2.21 3.58 4 8 4s8-1.79 8-4v-4.82L23 9 12 3zm6 13.5c0 .83-2.69 2.5-6 2.5s-6-1.67-6-2.5v-3.36l6 3.27 6-3.27v3.36z"/></svg>
-              </span>
-              Advocate General Office Sindh
-            </div>
-            <div class="nm">
-              <span class="logo-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="#558B2F" xmlns="http://www.w3.org/2000/svg"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.28L13 17v5l5-3-1.22-1.22C19.91 16.07 22 13.14 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.14 2.09 6.07 5.22 7.78L6 21l5 3v-5l-2.28 2.28C6.81 20 5 17.21 5 14c0-4.08 3.05-7.44 7-7.93V2.05z"/></svg>
-              </span>
-              Power Planning
-            </div>
+            {clients.government.map((c) => (
+              <div class="nm">
+                <span class="nm-badge" aria-hidden="true">{c.badge}</span>
+                {c.name}
+              </div>
+            ))}
           </div>
         </div>
 
-        <!-- JUDICIARY -->
         <div class="cgroup">
-          <div class="label"><div class="k">Judiciary</div><div class="n">// courts</div></div>
+          <div class="label"><div class="k">Judiciary</div></div>
           <div class="names">
-            <div class="nm">
-              <span class="logo-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="#6A1B9A" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg>
-              </span>
-              Sindh High Court
-            </div>
-            <div class="nm">
-              <span class="logo-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="#6A1B9A" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg>
-              </span>
-              Peshawar High Court
-            </div>
-            <div class="nm">
-              <span class="logo-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="#6A1B9A" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z"/></svg>
-              </span>
-              Govt of Punjab
-            </div>
+            {clients.judiciary.map((c) => (
+              <div class="nm">
+                <span class="nm-badge" aria-hidden="true">{c.badge}</span>
+                {c.name}
+              </div>
+            ))}
           </div>
         </div>
 
-        <!-- LAW ENFORCEMENT -->
         <div class="cgroup">
-          <div class="label"><div class="k">Law Enforcement</div><div class="n">// public sector</div></div>
+          <div class="label"><div class="k">Law enforcement</div></div>
           <div class="names">
-            <div class="nm">
-              <span class="logo-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="#BF360C" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 8 12 .34-.1.67-.22 1-.35V1z"/><path d="M12 1v21.65c.33.13.66.25 1 .35 4.16-1.26 8-6.45 8-12V5L12 1z" opacity=".5" fill="#BF360C"/></svg>
-              </span>
-              Sindh Police
-            </div>
+            {clients.enforcement.map((c) => (
+              <div class="nm">
+                <span class="nm-badge" aria-hidden="true">{c.badge}</span>
+                {c.name}
+              </div>
+            ))}
           </div>
         </div>
 
-        <!-- LAW FIRMS -->
         <div class="cgroup">
-          <div class="label"><div class="k">Law Firms</div><div class="n">// private sector</div></div>
+          <div class="label"><div class="k">Law firms</div></div>
           <div class="names">
-            <div class="nm">
-              <span class="logo-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="#283593" xmlns="http://www.w3.org/2000/svg"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 16.5 1 14.62 1c-1 0-2.06.47-2.76 1.27L12 2.67l-.86-.4C10.44 1.47 9.38 1 8.38 1 6.5 1 5 2.53 5 4.64c0 .48.11.92.18 1.36H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h17c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
-              </span>
-              AUC Law
-            </div>
-            <div class="nm">
-              <span class="logo-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="#283593" xmlns="http://www.w3.org/2000/svg"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 16.5 1 14.62 1c-1 0-2.06.47-2.76 1.27L12 2.67l-.86-.4C10.44 1.47 9.38 1 8.38 1 6.5 1 5 2.53 5 4.64c0 .48.11.92.18 1.36H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h17c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
-              </span>
-              ABS &amp; Co
-            </div>
-            <div class="nm">
-              <span class="logo-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="#283593" xmlns="http://www.w3.org/2000/svg"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 16.5 1 14.62 1c-1 0-2.06.47-2.76 1.27L12 2.67l-.86-.4C10.44 1.47 9.38 1 8.38 1 6.5 1 5 2.53 5 4.64c0 .48.11.92.18 1.36H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h17c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
-              </span>
-              Zafar Kalanauri &amp; Co
-            </div>
+            {clients.firms.map((c) => (
+              <div class="nm">
+                <span class="nm-badge" aria-hidden="true">{c.badge}</span>
+                {c.name}
+              </div>
+            ))}
           </div>
         </div>
       </div>
-      <p class="clients-note reveal">// confirm permission to name each client publicly before going live</p>
     </div>
   </section>
 
-  <!-- PARTNERS -->
-  <section id="partners">
+  <section id="partners" class="section-anchor">
     <div class="wrap">
       <div class="sec-head reveal">
         <div>
           <p class="eyebrow">Partners &amp; programs</p>
           <h2>Backed by the infrastructure we build on.</h2>
         </div>
-        <span class="num">/ 02</span>
       </div>
 
       <div class="prog-grid reveal">
-        <!-- Google -->
         <div class="prog">
           <div class="prog-logo" aria-label="Google">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
@@ -184,7 +142,6 @@ import Logo from './Logo.astro';
           <div class="porg">Cloud Program</div>
           <p class="pdesc">Selected for Google's program for high-growth startups. Cloud and AI infrastructure backing our build, including a $75K grant.</p>
         </div>
-        <!-- Anthropic -->
         <div class="prog">
           <div class="prog-logo" aria-label="Anthropic">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
@@ -195,7 +152,6 @@ import Logo from './Logo.astro';
           <div class="porg">Anthropic</div>
           <p class="pdesc">Building production AI on Anthropic's Claude models as a recognized partner in the Claude ecosystem.</p>
         </div>
-        <!-- NVIDIA -->
         <div class="prog">
           <div class="prog-logo" aria-label="NVIDIA">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
@@ -212,44 +168,42 @@ import Logo from './Logo.astro';
         <span class="gtag">Group company</span>
         <div>
           <span class="gname">DevBazar</span>
-          <div class="gdesc" style="margin-top:4px">Technical recruitment and talent placement. We help engineering teams hire.</div>
+          <p class="gdesc">Technical recruitment and talent placement. We help engineering teams hire.</p>
         </div>
-        <a class="btn btn-ghost" href="#contact" style="white-space:nowrap">Talk to DevBazar <span class="arr">&rarr;</span></a>
+        <a class="btn btn-ghost" href="#contact">Talk to DevBazar <span class="arr">&rarr;</span></a>
       </div>
     </div>
   </section>
 
-  <!-- CAPABILITIES -->
-  <section id="capabilities">
+  <section id="capabilities" class="section-anchor">
     <div class="wrap">
       <div class="sec-head reveal">
         <div>
           <p class="eyebrow">What we do</p>
           <h2>Full-stack software, applied AI, and the hard parts in between.</h2>
         </div>
-        <span class="num">/ 03</span>
       </div>
       <div class="cap-grid reveal">
         <div class="cap">
-          <span class="k">// applied-ai</span>
+          <span class="cap-tag">Applied AI</span>
           <h3>Applied AI &amp; LLM systems</h3>
           <p>RAG, agents, domain copilots, evals, and fine-tuning. Shipped into precision-critical domains including legal, compliance, and research.</p>
           <div class="stack"><span>RAG</span><span>Agents</span><span>Evals</span><span>Fine-tuning</span></div>
         </div>
         <div class="cap">
-          <span class="k">// product</span>
+          <span class="cap-tag">Product</span>
           <h3>Product engineering, zero to scale</h3>
           <p>Full-stack product from first commit to thousands of users. Clean architecture, real design systems, and the discipline to ship without the rebuild.</p>
           <div class="stack"><span>Next.js</span><span>FastAPI</span><span>NestJS</span><span>TypeScript</span></div>
         </div>
         <div class="cap">
-          <span class="k">// data</span>
+          <span class="cap-tag">Data</span>
           <h3>Data, search &amp; automation</h3>
           <p>ETL pipelines, document corpora, citation graphs, scraping and multi-source integrations. We move, clean, and make sense of data at scale.</p>
           <div class="stack"><span>Pipelines</span><span>Search relevance</span><span>Scraping</span><span>Integrations</span></div>
         </div>
         <div class="cap">
-          <span class="k">// platforms</span>
+          <span class="cap-tag">Platforms</span>
           <h3>Aggregators &amp; marketplaces</h3>
           <p>Multi-source platforms querying, normalizing, and unifying APIs behind one experience, with admin tooling for pricing, rules, and reporting.</p>
           <div class="stack"><span>API aggregation</span><span>Admin panels</span><span>Supabase</span><span>Vercel</span></div>
@@ -269,20 +223,18 @@ import Logo from './Logo.astro';
     </div>
   </section>
 
-  <!-- WORK -->
-  <section id="work">
+  <section id="work" class="section-anchor">
     <div class="wrap">
       <div class="sec-head reveal">
         <div>
           <p class="eyebrow">Selected work</p>
           <h2>Built, shipped, in use.</h2>
         </div>
-        <span class="num">/ 04</span>
       </div>
 
       <article class="case reveal">
         <div class="case-top">
-          <div><span class="tag">Flagship product / Legal AI</span><h3>DigiLawyer</h3></div>
+          <div><span class="tag">Flagship product &middot; Legal AI</span><h3>DigiLawyer</h3></div>
           <div class="role">Product, design,<br>engineering, AI<br>2022 to present</div>
         </div>
         <div class="case-body">
@@ -306,7 +258,7 @@ import Logo from './Logo.astro';
 
       <article class="case reveal">
         <div class="case-top">
-          <div><span class="tag">Travel / Aggregation</span><h3>Tracksure Connect</h3></div>
+          <div><span class="tag">Travel &middot; Aggregation</span><h3>Tracksure Connect</h3></div>
           <div class="role">Backend + full-stack<br>Sep to Oct 2025</div>
         </div>
         <div class="case-body">
@@ -329,7 +281,7 @@ import Logo from './Logo.astro';
 
       <article class="case reveal">
         <div class="case-top">
-          <div><span class="tag">AI / Legal-tech</span><h3>MyContract</h3></div>
+          <div><span class="tag">AI &middot; Legal-tech</span><h3>MyContract</h3></div>
           <div class="role">AI + full-stack<br>Nov 2024 to Mar 2025</div>
         </div>
         <div class="case-body">
@@ -350,7 +302,7 @@ import Logo from './Logo.astro';
         </div>
       </article>
 
-      <p class="more-head reveal">// more builds</p>
+      <p class="more-head reveal">More builds</p>
       <div class="more-grid reveal">
         <div class="mb">
           <div class="yr">2022</div>
@@ -368,15 +320,13 @@ import Logo from './Logo.astro';
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
+  <section id="about" class="section-anchor">
     <div class="wrap">
       <div class="sec-head reveal">
         <div>
           <p class="eyebrow">Who we are</p>
           <h2>A firm that ships its own products.</h2>
         </div>
-        <span class="num">/ 05</span>
       </div>
       <div class="about-grid">
         <div class="reveal">
@@ -391,28 +341,19 @@ import Logo from './Logo.astro';
         </div>
       </div>
 
-      <div class="pedigree reveal">
-        <div class="pl">Our engineers have shipped at</div>
-        <div class="pnames">
-          <span class="pn">Kayak</span>
-          <span class="pn">Avetta</span>
-          <span class="pn">Orchid</span>
-          <span class="pn">Merit Incentives</span>
-          <span class="pn">Curriki</span>
-          <span class="pn">Arbisoft</span>
-        </div>
-        <p class="note">// prior professional experience of team members, not Codxperts client projects</p>
-      </div>
+      <p class="about-cta reveal">
+        <a href="/track-record" class="btn about-cta-btn">View track record <span class="arr">&rarr;</span></a>
+      </p>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="section-anchor contact-section">
     <div class="wrap">
-      <p class="eyebrow reveal" style="margin-bottom:24px">Start a project</p>
+      <p class="eyebrow reveal">Start a project</p>
       <div class="contact-grid reveal">
         <div>
-          <h2>Have something hard to build?<br><a href="mailto:hello@codxperts.com">hello@codxperts.com</a></h2>
+          <h2>Have something hard to build?</h2>
+          <p class="contact-email"><a href="mailto:hello@codxperts.com">hello@codxperts.com</a></p>
           <p class="sub">Tell us what you're building and where it's stuck. We reply to every real inquiry.</p>
         </div>
         <a href="mailto:hello@codxperts.com" class="btn btn-primary">Send a brief <span class="arr">&rarr;</span></a>
@@ -422,9 +363,4 @@ import Logo from './Logo.astro';
 
 </main>
 
-<footer>
-  <div class="wrap foot">
-    <div class="l"><b>Codxperts Solutions (Pvt.) Ltd.</b><br>Software &amp; AI engineering &middot; Lahore, Pakistan</div>
-    <div class="r">&copy; 2026 &middot; Building globally</div>
-  </div>
-</footer>
+<SiteFooter />
