@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F3F3F1"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#DA3A24"/>
+
+  <g transform="translate(120 165) scale(0.29)">
+    <defs>
+      <linearGradient id="silver" x1="260" y1="315" x2="765" y2="735" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#f7f8f8"/>
+        <stop offset="0.18" stop-color="#cfd2d4"/>
+        <stop offset="0.42" stop-color="#f2f3f4"/>
+        <stop offset="0.62" stop-color="#a8adb1"/>
+        <stop offset="0.82" stop-color="#e9eaeb"/>
+        <stop offset="1" stop-color="#8c9297"/>
+      </linearGradient>
+      <linearGradient id="silverEdge" x1="260" y1="315" x2="765" y2="735" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+        <stop offset="0.5" stop-color="#70757a" stop-opacity="0.7"/>
+        <stop offset="1" stop-color="#ffffff" stop-opacity="0.85"/>
+      </linearGradient>
+      <linearGradient id="redBlade" x1="214" y1="800" x2="817" y2="186" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#DA3A24" stop-opacity="0"/>
+        <stop offset="0.14" stop-color="#DA3A24"/>
+        <stop offset="0.45" stop-color="#ff6b52"/>
+        <stop offset="0.58" stop-color="#DA3A24"/>
+        <stop offset="0.82" stop-color="#B12F1D"/>
+        <stop offset="1" stop-color="#f06a55" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="redCore" x1="214" y1="800" x2="817" y2="186" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+        <stop offset="0.42" stop-color="#ffc8bd" stop-opacity="0.95"/>
+        <stop offset="0.52" stop-color="#ffffff" stop-opacity="1"/>
+        <stop offset="0.64" stop-color="#ff8f7a" stop-opacity="0.95"/>
+        <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="redGlow" x="-70%" y="-70%" width="240%" height="240%" color-interpolation-filters="sRGB">
+        <feGaussianBlur stdDeviation="8" result="blur1"/>
+        <feGaussianBlur stdDeviation="18" result="blur2"/>
+        <feMerge>
+          <feMergeNode in="blur2"/>
+          <feMergeNode in="blur1"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="metalShadow" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.35"/>
+      </filter>
+      <filter id="hotspotGlow" x="-250%" y="-250%" width="500%" height="500%">
+        <feGaussianBlur stdDeviation="10" result="g"/>
+        <feMerge>
+          <feMergeNode in="g"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    <rect width="1024" height="1024" fill="#15171C"/>
+    <g transform="translate(512 512) scale(1.42) translate(-512 -512)">
+    <g filter="url(#metalShadow)">
+      <path d="M 280 318 L 360 318 L 762 722 L 682 722 Z" fill="url(#silver)"/>
+      <path d="M 280 318 L 360 318 L 762 722 L 682 722 Z" fill="none" stroke="url(#silverEdge)" stroke-width="2" opacity="0.6"/>
+      <path d="M 280 318 L 360 318 L 382 340 L 302 340 Z" fill="#ffffff" opacity="0.38"/>
+      <path d="M 682 722 L 762 722 L 742 702 L 662 702 Z" fill="#70767b" opacity="0.35"/>
+      <path d="M 336 318 L 360 318 L 762 722 L 735 722 Z" fill="#ffffff" opacity="0.22"/>
+    </g>
+    <g filter="url(#redGlow)">
+      <polygon points="216,804 489,536 816,185 543,568" fill="url(#redBlade)" opacity="0.95"/>
+      <polygon points="253,772 504,532 783,218 531,557" fill="url(#redCore)" opacity="0.88"/>
+      <line x1="218" y1="802" x2="817" y2="186" stroke="#DA3A24" stroke-width="2.2" stroke-linecap="round" opacity="0.95"/>
+      <line x1="272" y1="746" x2="775" y2="228" stroke="#ff8f7a" stroke-width="1.3" stroke-linecap="round" opacity="0.9"/>
+    </g>
+    <g filter="url(#hotspotGlow)">
+      <circle cx="509" cy="530" r="8" fill="#DA3A24" opacity="0.95"/>
+      <circle cx="509" cy="530" r="3.2" fill="#ffffff" opacity="0.95"/>
+    </g>
+    </g>
+  </g>
+
+  <text x="430" y="290" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="72" font-weight="700" letter-spacing="4" fill="#15171C">CODXPERTS</text>
+  <text x="430" y="360" font-family="ui-sans-serif, system-ui, sans-serif" font-size="34" font-weight="500" fill="#565B62">Software &amp; AI engineering</text>
+  <text x="430" y="420" font-family="ui-sans-serif, system-ui, sans-serif" font-size="24" fill="#565B62">Building AI software for institutions that can't afford for it to break.</text>
+</svg>
