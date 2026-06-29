@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { uploadedAssets } from '../data/uploaded-assets';
+import SiteNav from '../components/SiteNav.astro';
 
 interface Props {
   title?: string;
@@ -59,8 +60,11 @@ const imageURL = new URL(image, Astro.site);
     />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <slot />
+    <div class="page-shell">
+      <a class="skip-link" href="#main">Skip to content</a>
+      <slot />
+    </div>
+    <SiteNav />
     <script is:inline src="/reveal.js"></script>
     <script is:inline src="/nav.js"></script>
   </body>

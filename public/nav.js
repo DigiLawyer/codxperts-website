@@ -3,6 +3,8 @@
   var nav = document.getElementById('site-nav');
   if (!toggle || !nav) return;
 
+  document.body.classList.remove('nav-open');
+
   function setOpen(open) {
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');

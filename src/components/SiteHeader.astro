@@ -3,27 +3,14 @@ import Logo from './Logo.astro';
 
 const path = Astro.url.pathname;
 const onHome = path === '/' || path === '';
-const section = (id: string) => (onHome ? `#${id}` : `/#${id}`);
 ---
-<header>
-  <div class="wrap bar">
+<div class="site-chrome">
+  <div class="wrap header-inner">
     <a href={onHome ? '#main' : '/'} class="brand"><Logo width={40} height={40} />CODXPERTS</a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </button>
-    <nav id="site-nav" class="site-nav" aria-label="Primary">
-      <div class="site-nav-links">
-        <a href={section('clients')} class="navlink">Clients</a>
-        <a href={section('partners')} class="navlink">Partners</a>
-        <a href={section('capabilities')} class="navlink">Capabilities</a>
-        <a href={section('work')} class="navlink">Work</a>
-        <a href="/team" class:list={['navlink', { 'navlink-active': path === '/team' }]}>Team</a>
-        <a href="/track-record" class:list={['navlink', { 'navlink-active': path === '/track-record' }]}>Track record</a>
-        <a href={section('about')} class="navlink">About</a>
-      </div>
-      <a href={section('contact')} class="cta nav-cta">Start a project</a>
-    </nav>
   </div>
-</header>
+</div>
