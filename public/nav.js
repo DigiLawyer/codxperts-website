@@ -24,6 +24,6 @@
   });
 
   window.addEventListener('resize', function () {
-    if (window.innerWidth > 900) setOpen(false);
+    if (window.innerWidth > 1024) setOpen(false);
   });
 })();
